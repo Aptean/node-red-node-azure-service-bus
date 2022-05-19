@@ -1,0 +1,68 @@
+[
+    {
+        "id": "2e5dbc106931b048",
+        "type": "debug",
+        "z": "cd7e1b144202a793",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "b784261737215d97",
+        "type": "inject",
+        "z": "cd7e1b144202a793",
+        "name": "Inject dummy data",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "applicationProperties.company",
+                "v": "\"Objective\"",
+                "vt": "str"
+            },
+            {
+                "p": "applicationProperties.time",
+                "v": "",
+                "vt": "date"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"test1\":\"1\",\"test2\":\"2\",\"test3\":\"3\"}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "0f2413b00f2c8f0b"
+            ]
+        ]
+    },
+    {
+        "id": "0f2413b00f2c8f0b",
+        "type": "azure-service-bus-post",
+        "z": "cd7e1b144202a793",
+        "name": "",
+        "topic": "objective",
+        "connectionString": "[connection]",
+        "x": 450,
+        "y": 180,
+        "wires": [
+            [
+                "2e5dbc106931b048"
+            ]
+        ]
+    }
+]

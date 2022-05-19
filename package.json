@@ -1,0 +1,31 @@
+{
+  "name": "@objectiveinternational/node-red-node-azure-service-bus",
+  "version": "1.0.0",
+  "description": "A node-red node for posting messages to an Azure Service Bus using the @azure/service-bus library",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/objectiveinternational/node-red-node-azure-service-bus"
+  },
+  "author": "sb",
+  "license": "MIT",
+  "keywords": [
+    "azure",
+    "service-bus",
+    "node-red"
+  ],
+  "node-red" : {
+		"version": ">=1.3.7",
+        "nodes": {
+            "azure-service-bus-post": "azure-service-bus-post.js"
+        }
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "dependencies": {
+    "@azure/service-bus": "^7.5.1"
+  }
+}
